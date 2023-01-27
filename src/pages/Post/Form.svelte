@@ -193,11 +193,11 @@
           />
         </Label>
         <Label class="space-y-2">
-          <span>Pilih Operator</span>
+          <span>Pilih Kategori</span>
           <Input
             type="search"
             bind:value={searchCategory}
-            placeholder="Cari operator ..."
+            placeholder="Cari kategori ..."
           >
             <span class="w-5 h-5" slot="right">
               <IoIosSearch />
