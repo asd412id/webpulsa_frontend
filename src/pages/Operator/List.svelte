@@ -93,7 +93,7 @@
   />
   <Auth title="Daftar Operator">
     <div class="flex flex-col gap-2">
-      <div class="flex md:justify-between justify-center">
+      <div class="flex md:justify-between justify-center gap-2">
         <Button
           size="sm"
           on:click={() => {

@@ -12,6 +12,7 @@
   import FaUserCircle from "svelte-icons/fa/FaUserCircle.svelte";
   import { useNavigate } from "svelte-navigator";
   import Account from "../pages/Account.svelte";
+  import { SidebarToggle } from "../lib/SidebarToggle";
 
   const navigate = useNavigate();
   let showForm = false;
@@ -38,7 +39,12 @@
         >
           <FaUserCircle />
         </Avatar>
-        <NavHamburger on:click class1="w-full md:flex md:w-auto md:order-1" />
+        <NavHamburger
+          on:click={() => {
+            SidebarToggle.set(!$SidebarToggle);
+          }}
+          class1="w-full md:flex md:w-auto md:order-1"
+        />
       </div>
       <Dropdown
         placement="bottom-end"

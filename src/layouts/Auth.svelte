@@ -9,6 +9,7 @@
   import SidebarMenu from "./SidebarMenu.svelte";
   import Toast from "../components/Toast.svelte";
   import { notification } from "../lib/Notification";
+  import { SidebarToggle } from "../lib/SidebarToggle";
   export let title = "Beranda";
   export let active = location.pathname;
   document.title = `${title} | ${
@@ -42,14 +43,17 @@
       <Spinner color="blue" size={12} />
     </div>
   {:else if $userData}
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div
-      class="left-72 top-10 pt-10 right-0 pr-8 bottom-0 pb-10 fixed overflow-y-auto"
+      class="md:left-72 left-0 md:pl-8 top-10 pt-10 right-0 md:pr-8 bottom-0 pb-10 fixed overflow-y-auto"
     >
-      <div class="font-bold text-3xl mb-5">{title}</div>
+      <div class="font-bold md:text-3xl text-xl text-center md:text-left mb-5">
+        {title}
+      </div>
       <slot />
     </div>
-    <NavbarMenu class="fixed top-0 left-64 right-0 bg-gray-50" />
-    <SidebarMenu class="fixed left-0 top-0 bottom-0" {active} />
+    <NavbarMenu class="fixed top-0 md:left-64 left-0 right-0 bg-gray-50" />
+    <SidebarMenu class={`fixed left-0 top-0 bottom-0`} {active} />
     <Toast
       bind:show={$notification.show}
       bind:type={$notification.type}

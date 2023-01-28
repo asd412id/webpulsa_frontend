@@ -138,8 +138,8 @@
     {#if error}
       <Alert color="red" class="flex justify-center">{error}</Alert>
     {/if}
-    <div class="flex gap-5">
-      <div class="flex flex-col gap-5 w-8/12">
+    <div class="flex flex-col md:flex-row gap-5">
+      <div class="flex flex-col gap-5 w-full md:w-8/12">
         <Label class="space-y-2">
           <span>Judul Postingan</span>
           <Input
@@ -168,7 +168,7 @@
           <Editor bind:content bind:editor />
         </div>
       </div>
-      <div class="flex flex-col gap-5 w-4/12">
+      <div class="flex flex-col gap-5 w-full md:w-4/12">
         <Label class="space-y-2">
           <span>Status</span>
           <Select bind:value={data.publish}>
