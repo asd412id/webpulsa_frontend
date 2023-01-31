@@ -2,7 +2,7 @@
   // @ts-nocheck
 
   import axios from "axios";
-  import { Button, Modal, Label, Input, Alert } from "flowbite-svelte";
+  import { Button, Modal, Label, Input, Alert, Select } from "flowbite-svelte";
   import { createEventDispatcher } from "svelte";
   import IoIosSearch from "svelte-icons/io/IoIosSearch.svelte";
   import InfiniteScroll from "../../lib/InfiniteScroll.svelte";
@@ -12,6 +12,7 @@
   export let show = false;
   export let id = null;
   export let data = {
+    cat_id: "",
     name: "",
     price: 0,
     operators: [],
@@ -23,6 +24,7 @@
   let page = 0;
   let operators = [];
   let fetchOperators = [];
+  let pulsaCats = [];
   let searchOperator = "";
   let st;
 
@@ -31,6 +33,7 @@
     page = 0;
     operators = [];
     getOperators();
+    getPulsaCategories();
   }
 
   $: if (searchOperator !== undefined) {
@@ -48,6 +51,11 @@
     );
     fetchOperators = [...operators, ...res.data.data.datas];
     operators = fetchOperators;
+  };
+
+  const getPulsaCategories = async () => {
+    const res = await axios.get(`/pulsa-category?page=0&size=1000`);
+    pulsaCats = res.data.data.datas;
   };
 
   $: formattedValue = new Intl.NumberFormat("id").format(data.price);
@@ -111,6 +119,20 @@
     {/if}
     <div class="flex gap-5">
       <div class="flex flex-col w-full gap-4">
+        <Label class="space-y-2">
+          <span>Jenis Pulsa</span>
+          <select
+            class="block w-full text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-sm p-2.5"
+            bind:value={data.cat_id}
+            disabled={loading}
+            required
+          >
+            <option value="">Pilih Jenis Pulsa</option>
+            {#each pulsaCats as pc}
+              <option value={pc.id}>{pc.name}</option>
+            {/each}
+          </select>
+        </Label>
         <Label class="space-y-2">
           <span>Nama Pulsa</span>
           <Input

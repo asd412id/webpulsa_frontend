@@ -62,7 +62,7 @@
 
   async function loadData() {
     const response = await axios.get(
-      `/post-category/?page=${page}&size=${limit}&search=${search}`
+      `/pulsa-category/?page=${page}&size=${limit}&search=${search}`
     );
     newData = response.data.data.datas;
     data = [...data, ...newData];
@@ -79,7 +79,7 @@
 <main>
   <DeleteModal
     bind:show={deleteForm.show}
-    url={`/post-category/${deleteForm.id}`}
+    url={`/pulsa-category/${deleteForm.id}`}
     on:onDelete={reloadData}
     >{`Yakin ingin menghapus ${deleteForm.text}?`}</DeleteModal
   >
@@ -89,7 +89,7 @@
     bind:id={form.data.id}
     on:onSubmit={reloadData}
   />
-  <Auth title="Kategori Postingan">
+  <Auth title="Jenis Pulsa">
     <div class="flex flex-col gap-2">
       <div class="flex md:justify-between justify-center gap-2">
         <Button
@@ -121,7 +121,7 @@
         <Table shadow striped={true} hoverable={true}>
           <TableHead class="bg-gray-100">
             <TableHeadCell>Nama Kategori</TableHeadCell>
-            <TableHeadCell>Jumlah Postingan</TableHeadCell>
+            <TableHeadCell>Jumlah Item</TableHeadCell>
             <TableHeadCell>
               <span class="sr-only">Edit</span>
             </TableHeadCell>
@@ -131,7 +131,7 @@
               {#each data as row}
                 <TableBodyRow key={row.id}>
                   <TableBodyCell>{row.name}</TableBodyCell>
-                  <TableBodyCell>{row.posts?.length}</TableBodyCell>
+                  <TableBodyCell>{row.pulsas?.length}</TableBodyCell>
                   <TableBodyCell>
                     <div class="flex gap-1 justify-end">
                       <Button

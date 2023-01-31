@@ -9,7 +9,6 @@
   import SidebarMenu from "./SidebarMenu.svelte";
   import Toast from "../components/Toast.svelte";
   import { notification } from "../lib/Notification";
-  import { SidebarToggle } from "../lib/SidebarToggle";
   export let title = "Beranda";
   export let active = location.pathname;
   document.title = `${title} | ${

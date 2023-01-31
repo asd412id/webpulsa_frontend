@@ -12,6 +12,7 @@
   import FaMoneyBill from "svelte-icons/fa/FaMoneyBill.svelte";
   import FaTags from "svelte-icons/fa/FaTags.svelte";
   import FaFileAlt from "svelte-icons/fa/FaFileAlt.svelte";
+  import FaHashtag from "svelte-icons/fa/FaHashtag.svelte";
   import { Link } from "svelte-navigator";
   import { SidebarToggle } from "../lib/SidebarToggle";
 
@@ -24,15 +25,20 @@
   export let active = "beranda";
 
   const menus = [
-    {
-      icon: MdDashboard,
-      name: "Beranda",
-      link: "/admin",
-    },
+    // {
+    //   icon: MdDashboard,
+    //   name: "Beranda",
+    //   link: "/admin",
+    // },
     {
       icon: FaBroadcastTower,
       name: "Daftar Operator",
-      link: "/admin/operator",
+      link: "/admin",
+    },
+    {
+      icon: FaHashtag,
+      name: "Jenis Pulsa",
+      link: "/admin/jenis-pulsa",
     },
     {
       icon: FaMoneyBill,

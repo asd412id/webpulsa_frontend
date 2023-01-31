@@ -33,12 +33,14 @@
     show: false,
     default: {
       id: null,
+      cat_id: "",
       name: "",
       price: 0,
       operators: [],
     },
     data: {
       id: null,
+      cat_id: "",
       name: "",
       price: 0,
       operators: [],
@@ -124,6 +126,7 @@
       {:else}
         <Table shadow striped={true} hoverable={true}>
           <TableHead class="bg-gray-100">
+            <TableHeadCell>Jenis Pulsa</TableHeadCell>
             <TableHeadCell>Nama Pulsa</TableHeadCell>
             <TableHeadCell>Operator</TableHeadCell>
             <TableHeadCell>Harga</TableHeadCell>
@@ -135,6 +138,7 @@
             {#if data.length}
               {#each data as row}
                 <TableBodyRow key={row.id}>
+                  <TableBodyCell>{row.pulsa_category.name}</TableBodyCell>
                   <TableBodyCell>{row.name}</TableBodyCell>
                   <TableBodyCell>
                     <div class="flex gap-3 items-center flex-wrap">
@@ -164,6 +168,7 @@
                           form.data = {
                             ...{
                               id: row.id,
+                              cat_id: row.pulsa_category.id,
                               name: row.name,
                               price: row.price,
                               operators: [...row.operator.map((e) => e.id)],
@@ -187,7 +192,7 @@
               {/each}
             {:else}
               <TableBodyRow>
-                <TableBodyCell colspan={4} class="text-center"
+                <TableBodyCell colspan={5} class="text-center"
                   >Data tidak tersedia</TableBodyCell
                 >
               </TableBodyRow>

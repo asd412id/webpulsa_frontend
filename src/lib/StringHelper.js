@@ -18,3 +18,10 @@ export const searchKey = (event) => {
     event.metaKey ||
     event.shiftKey;
 }
+
+export const cutLongText = (text, maxLength) => {
+  if (text.length > maxLength) {
+    return text.substring(0, maxLength).concat(" ...");
+  }
+  return text;
+}
