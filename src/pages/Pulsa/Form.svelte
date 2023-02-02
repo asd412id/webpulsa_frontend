@@ -134,11 +134,11 @@
           </select>
         </Label>
         <Label class="space-y-2">
-          <span>Nama Pulsa</span>
+          <span>Kode Pulsa</span>
           <Input
             type="text"
             name="name"
-            placeholder="Nama Pulsa"
+            placeholder="Kode Pulsa"
             bind:value={data.name}
             disabled={loading}
             required

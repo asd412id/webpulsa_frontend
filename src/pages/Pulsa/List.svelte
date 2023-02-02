@@ -127,7 +127,7 @@
         <Table shadow striped={true} hoverable={true}>
           <TableHead class="bg-gray-100">
             <TableHeadCell>Jenis Pulsa</TableHeadCell>
-            <TableHeadCell>Nama Pulsa</TableHeadCell>
+            <TableHeadCell>Kode Pulsa</TableHeadCell>
             <TableHeadCell>Operator</TableHeadCell>
             <TableHeadCell>Harga</TableHeadCell>
             <TableHeadCell>

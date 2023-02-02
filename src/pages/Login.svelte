@@ -2,6 +2,7 @@
   import { userData } from "../lib/UserData";
   import axios from "axios";
   import { Alert, Button, Input } from "flowbite-svelte";
+  import logo from "../assets/logo.png";
 
   document.title = `Silahkan Login | ${
     import.meta.env.VITE_APP_NAME || "Aplikasi Pulsa"
@@ -34,14 +35,16 @@
     >
       <a
         href="/"
-        class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
+        class="flex flex-col items-center mb-6 font-semibold text-gray-900 dark:text-white"
       >
         <img
-          class="w-8 h-8 mr-2"
-          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
-          alt="logo"
+          class="w-16 h-16 mb-3"
+          src={logo}
+          alt={`Logo ${import.meta.env.VITE_APP_NAME || "Aplikasi Pulsa"}`}
         />
-        {import.meta.env.VITE_APP_NAME || "Aplikasi Pulsa"}
+        <h1 class="text-4xl text-blue-800">
+          {import.meta.env.VITE_APP_NAME || "Aplikasi Pulsa"}
+        </h1>
       </a>
       <div
         class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700"

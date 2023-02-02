@@ -6,7 +6,7 @@
     SidebarItem,
     SidebarGroup,
   } from "flowbite-svelte";
-  import logo from "../assets/logo.svg";
+  import logo from "../assets/logo.png";
   import MdDashboard from "svelte-icons/md/MdDashboard.svelte";
   import FaBroadcastTower from "svelte-icons/fa/FaBroadcastTower.svelte";
   import FaMoneyBill from "svelte-icons/fa/FaMoneyBill.svelte";

@@ -8,7 +8,7 @@
   } from "flowbite-svelte";
   import { Link } from "svelte-navigator";
 
-  import logo from "../assets/logo.svg";
+  import logo from "../assets/logo.png";
 
   export let title = "Selamat Datang";
   export let active = location.pathname;

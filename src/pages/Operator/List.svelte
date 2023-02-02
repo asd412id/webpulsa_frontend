@@ -124,7 +124,7 @@
           <TableHead class="bg-gray-100">
             <TableHeadCell>Logo</TableHeadCell>
             <TableHeadCell>Nama Operator</TableHeadCell>
-            <TableHeadCell>Jumlah Jenis Pulsa</TableHeadCell>
+            <TableHeadCell>Jumlah Pulsa</TableHeadCell>
             <TableHeadCell>
               <span class="sr-only">Edit</span>
             </TableHeadCell>
